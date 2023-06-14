@@ -26,11 +26,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $cards = require app_path('../config/linksCards.php');
-        $comics = require app_path('../config/linksComics.php');
+        $comicLinks = require app_path('../config/linksComics.php');
         $socials = require app_path('../config/linksSocials.php');
     
         View::share('cards', $cards);
-        View::share('comics', $comics);
+        View::share('comicLinks', $comicLinks);
         View::share('socials', $socials);
     }
 }

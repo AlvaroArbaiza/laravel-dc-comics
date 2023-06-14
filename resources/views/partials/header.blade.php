@@ -11,13 +11,13 @@
         {{-- navbar --}}
         <nav>
             <ul>
-                @foreach($comics[0]['links'] as $link)
+                @foreach($comicLinks[0]['links'] as $link)
 
                     {{-- se active è true --}}
-                    @if($link['active'])
+                    @if(request()->url() !== route('home') && $link['url'] !== 'home')
 
                         {{-- se la route corrente corrisponde a $link['url'] e inizia con la route passata dalla variabile otterrà la classe 'active' --}}
-                        <li class="{{ Str::startsWith(request()->url(), route($link['url'])) ? 'active' : '' }}">
+                        <li class="{{ request()->url() === route('comics.index') ? 'active' : '' }}">
                             <a href="{{ route($link['url']) }}">                        
                                 <span>{{ $link['name'] }}</span>
                                 <hr>
@@ -26,7 +26,7 @@
                     {{-- se active è false --}}
                     @else
                         <li>
-                            <a href="#">                        
+                            <a href="{{ route($link['url']) }}">                        
                                 <span>{{ $link['name'] }}</span>
                                 <hr>
                             </a>

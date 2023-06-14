@@ -8,52 +8,13 @@
 {{-- Main Content --}}
 @section('content')
 
-    <!-- contents -->
-    <section id="contents">
-        <div class="container">
+    <div class="container">
 
-            <!-- current series -->
-            <div id="cur-series">
-                <span>current series</span>
+        <div class="row justify-content-center text-center py-5">
+            <div class="col">
+                <h2 class="fs-1 fw-bold border border-primary border-5 py-2">HOME</h2>
+                <h4 class="fs-1 fw-bold text-danger">---> Click Comics on the NavBar! <---</h4>
             </div>
-
-            <!-- Series -->
-            @foreach($comicBooks as $index => $book)
-                <div class="series">
-
-                    {{-- img --}}
-                    <a href="{{ route('comics.index') }}">
-                    </a>
-                    <img src="{{ $book['thumb'] }}" alt="{{ $book['series'] }}">
-
-                    {{-- title --}}
-                    <h5>{{ $book['series'] }}</h5>
-                </div>
-            @endforeach
-
-            <!-- load more -->
-            <div id="load-more">
-                <span>load more</span>
-            </div>
-
         </div>
-    </section>
-
-    <!-- cards -->
-    <section id="cards">
-        <div class="container">
-
-            <!-- card -->
-            @foreach($cards as $card)
-                <div class="dcCard">
-
-                    <!-- img -->
-                    <div class="img">
-                        <img src="{{ Vite::asset('resources/img/' . $card['url']) }}" alt="{{ $card['name']}}">
-                    </div>
-                    <h3>{{ $card['name'] }}</h3>
-                </div>
-            @endforeach
-        </div>
-    </section>
+    </div>
 @endsection

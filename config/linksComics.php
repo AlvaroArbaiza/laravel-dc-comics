@@ -7,61 +7,61 @@ return [
             [
                 "name" => "Characters",
                 "show" => true,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ],
             [
                 "name" => "Comics",
                 "show" => true,
-                "url" => "home",
-                "active" => true
+                "url" => "comics.index",
+                "active" => false
             ],
             [
                 "name" => "Movies",
                 "show" => true,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ],
             [
                 "name" => "TV",
                 "show" => true,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ],
             [
                 "name" => "Games",
                 "show" => true,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ],
             [
                 "name" => "Collectibles",
                 "show" => false,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ],
             [
                 "name" => "Videos",
                 "show" => true,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ],
             [
                 "name" => "Fans",
                 "show" => false,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ],
             [
                 "name" => "News",
                 "show" => true,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ],
             [
                 "name" => "Shop",
                 "show" => true,
-                "url" => "#",
+                "url" => "home",
                 "active" => false
             ]
         ]

@@ -8,7 +8,7 @@
             <!-- left -->
             <div class="left">
 
-                @foreach($comics as $element)
+                @foreach($comicLinks as $element)
                     <div class="lists">
 
                         <h3 class="fw-bold">{{ $element['id'] }}</h3>
