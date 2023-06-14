@@ -22,9 +22,9 @@
                 <div class="series">
 
                     {{-- img --}}
-                    <a href="{{ route('comics' , ['index' => $index]) }}">
-                        <img src="{{ $book['thumb'] }}" alt="{{ $book['series'] }}">
+                    <a href="{{ route('comics.index') }}">
                     </a>
+                    <img src="{{ $book['thumb'] }}" alt="{{ $book['series'] }}">
 
                     {{-- title --}}
                     <h5>{{ $book['series'] }}</h5>

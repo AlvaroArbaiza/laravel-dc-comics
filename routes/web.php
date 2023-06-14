@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController as HomeController;
+use App\Http\Controllers\ComicController as ComicController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,19 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Collegamento con HomeController
+Route::get('/', [ HomeController::class, 'index' ] )->name('home');
 
-    $comicBooks = config('comics');
 
-    return view('pages.home', compact('comicBooks'));
-})->name('home');
-
-// In questa funzione ho creato una varabile index che otterrà il valore dell'index del @foreach passato al click sulla card dei fumetti in SERIES nella HOME
-Route::get('/comics/{index}', function($index) {
-
-    $comicBooks = config('comics');
-
-    $currentComic = $comicBooks[$index];
-
-    return view('pages.comics', ['index' => $index], compact('currentComic'));
-})->name('comics');
+Route::resource( '/comics', ComicController::class );
