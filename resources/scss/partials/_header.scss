@@ -1,0 +1,86 @@
+// header
+header {
+    width: 100%;
+
+    .container {
+        @include widthMargin(80%, 0);
+        height: 100px;
+        @include center('vertical');
+        justify-content: space-between;
+
+        // logo
+        #logo {
+            height: 80%;
+
+            img {
+                max-height: 100%;
+            }
+        }
+
+        // nav
+        nav {
+            height: 100%;
+
+            ul {
+                height: 100%;
+                @include space('between');
+
+                li {
+                    height: 100%;
+                    list-style-type: none;
+                    padding: 0 10px;
+                    cursor: pointer;
+
+                    a {
+                        height: 100%;
+                        @include center('vertical');
+                        position: relative;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        color: #000;
+                        transition: all 0.3s linear;
+
+                        hr {
+                            position: absolute;
+                            width: 100%;
+                            border: 3px solid #fff;
+                            bottom: 0;
+                            left: 0;
+                            transition: all 0.3s linear;
+                        }
+
+                    }
+
+                    &:hover hr {
+                        border: 3px solid #0282f9;
+                        opacity: 1;
+                    }
+
+                    &:hover a {
+                        color: #0282f9;
+                    }
+                }
+
+                .active {
+                    hr {
+                        border: 3px solid #0282f9;
+                        opacity: 1;
+                    }
+                    a {
+                        color: #0282f9;
+                    }
+                }
+            }
+        }
+    }
+
+    // jumbotron
+    #jumbotron {
+        min-height: 350px;
+        background: url("../img/jumbotron.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

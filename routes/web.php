@@ -14,5 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+
+    $comicBooks = config('comics');
+
+    return view('pages.home', compact('comicBooks'));
+})->name('home');
+
+// In questa funzione ho creato una varabile index che otterrà il valore dell'index del @foreach passato al click sulla card dei fumetti in SERIES nella HOME
+Route::get('/comics/{index}', function($index) {
+
+    $comicBooks = config('comics');
+
+    $currentComic = $comicBooks[$index];
+
+    return view('pages.comics', ['index' => $index], compact('currentComic'));
+})->name('comics');

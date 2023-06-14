@@ -1,0 +1,102 @@
+// main
+main {
+    width: 100%;
+
+    // contents
+    #contents {
+        min-height: 200px;
+        position: relative;
+        background-color: #1c1c1c;
+        @include center('vertical');
+
+        .container {
+            @include widthMargin(80%, 40px);
+            display: flex;
+            flex-wrap: wrap;
+
+            #cur-series {
+                position: absolute;
+                top: -15px;
+
+                span {
+                    padding: 0.7rem 1.5rem;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    cursor: default;
+                    background-color: #0282f9;
+                    color: #fff;
+                }
+            }
+
+            .series {
+                width: calc(100% / 6);
+                padding: 15px;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    aspect-ratio: 1/1;
+                    object-position: top;
+                }
+
+                h5 {
+                    color: #fff;
+                    margin: 15px 0;
+                    font-size: 0.83rem;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                }
+            }
+
+            #load-more {
+                margin: 0 auto;
+
+                span {
+                    padding: 0.7rem 3.5rem;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    background-color: #0282f9;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    // cards
+    #cards {
+        height: 200px;
+        background-color: #0282f9;
+        @include center('vertical');
+
+        .container {
+            @include widthMargin(80%, 0);
+            @include center('vertical');
+            justify-content: space-between;
+
+            .dcCard {
+                @include center('both');
+                flex-basis: calc(100% / 5);
+
+                .img {
+                    flex-basis: 20%;
+
+                    img {
+                        max-width: 100%;
+                        max-height: 95px;
+                    }
+                }
+
+                h3 {
+                    margin-left: 10px;
+                    color: #fff;
+                    font-weight: 400;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
