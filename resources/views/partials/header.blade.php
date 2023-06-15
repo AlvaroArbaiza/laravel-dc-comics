@@ -8,6 +8,13 @@
             </a>
         </div>
 
+        {{-- crea il tuo fumetto --}}
+        <div>
+            <a href="{{ route('comics.create') }}" class="text-decoration-none">
+                <span class="fw-bold fs-5 border border-3 border-primary text-uppercase p-2">crea il tuo fumetto!</span>
+            </a>
+        </div>
+
         {{-- navbar --}}
         <nav>
             <ul>

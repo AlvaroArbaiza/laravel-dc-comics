@@ -2,7 +2,7 @@
 
 {{-- Head | title --}}
 @section('title')
-    Laravel DC Comics | Comic
+    Laravel DC Comics | Comic Book
 @endsection
 
 {{-- Main Content --}}

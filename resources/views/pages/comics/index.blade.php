@@ -32,7 +32,9 @@
 
             <!-- load more -->
             <div id="load-more">
-                <span>load more</span>
+                <a href="{{ route('comics.create' )}}" class="text-decoration-none">
+                    <span class="fw-bold fs-1 border border-2 border-white">crea il tuo fumetto!</span>
+                </a>
             </div>
 
         </div>

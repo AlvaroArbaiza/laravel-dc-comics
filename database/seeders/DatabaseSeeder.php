@@ -20,5 +20,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // specifichiamo che il seeder ComicSeeder deve essere eseguito durante il processo di popolamento del database
+        $this->call([
+            ComicSeeder::class
+        ]);
     }
 }

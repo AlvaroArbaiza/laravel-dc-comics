@@ -16,6 +16,7 @@ class ComicSeeder extends Seeder
      */
     public function run()
     {
+        // prendiamo l'array dalla cartella config per ciclarlo e poi usarlo per riempure la tabella
         $comics = config('comics');
 
         foreach ($comics as $element) {
