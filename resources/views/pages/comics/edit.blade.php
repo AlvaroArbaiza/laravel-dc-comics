@@ -14,7 +14,7 @@
 
             <h2 class="mb-5">Inserisci tutti i campi per creare il tuo fumetto</h2>
 
-            
+            {{-- Inserisco nell'attributo action la rotta update, passando la variabile $comic che lui stesso andrà a filtrare per ottenere l'id corrispondente all'elemento da modificare nella tabella --}}
             <form action="{{ route('comics.update', $comic ) }}" method="POST">
 
                 @csrf

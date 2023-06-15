@@ -29,7 +29,17 @@
                     <h5>{{ $book['series'] }}</h5>
 
                     {{-- edit --}}
+                    {{-- bottone con rotta che riconduce all'id della tabella dell'elemento selezionato --}}
                     <a href="{{ route('comics.edit', $book['id'] ) }}" class="btn btn-info">Modifica</a>
+
+                    {{-- delete --}}
+                    {{-- Inserisco nell'attributo action la rotta destroy, passando la variabile $book['id'] per cancellare l'elemento corrente --}}
+                    <form action="{{ route('comics.destroy', $book['id']) }}" method="POST">
+
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Cancella</button>
+                    </form>
                 </div>
             @endforeach
 

@@ -41,7 +41,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // associamo a una variabile i dati passati con il form        
         $form_data = $request->all();
 
         $newComic = new Comic();
@@ -85,10 +85,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        // associamo a una variabile i dati passati con il form
         $form_data = $request->all();
+
+        // aggiorniamo l'elemento passato con il form, usando il metodo update()
         $comic->update($form_data);
 
-        return redirect()->route('comics.index' , $comic['id']);
+        // facciamo un redirect verso la pagina contenente tutti i nostri comic dove possiamo avere una panoramica dei nostri elementi modificati
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -99,6 +103,9 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        // cancelliamo l'elemento passato con il metodo destroy
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
