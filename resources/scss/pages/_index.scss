@@ -12,7 +12,7 @@ main {
         .container {
             @include widthMargin(80%, 40px);
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
 
             #cur-series {
                 position: absolute;
@@ -50,7 +50,6 @@ main {
             }
 
             #load-more {
-                margin: 0 auto;
 
                 span {
                     padding: 0.7rem 3.5rem;

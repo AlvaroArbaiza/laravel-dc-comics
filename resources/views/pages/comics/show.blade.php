@@ -59,6 +59,21 @@
                     {{ $comic['description'] }}
                 </p>
             </div>
+
+            <div class="d-flex justify-content-between">
+                {{-- edit --}}
+                {{-- bottone con rotta che riconduce all'id della tabella dell'elemento selezionato --}}
+                <a href="{{ route('comics.edit', $comic['id'] ) }}" class="btn btn-info fw-bold">Modifica</a>
+    
+                {{-- delete --}}
+                {{-- Inserisco nell'attributo action la rotta destroy, passando la variabile $comic['id'] per cancellare l'elemento corrente --}}
+                <form action="{{ route('comics.destroy', $comic['id']) }}" method="POST">
+    
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger fw-bold">Cancella</button>
+                </form>
+            </div>
         </div>
 
         {{-- advertisign --}}

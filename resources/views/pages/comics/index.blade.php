@@ -17,37 +17,44 @@
             </div>
 
             <!-- Series -->
-            @foreach($comics as $book)
-                <div class="series">
+            <div class="row my-4">
 
-                    {{-- img --}}
-                    <a href="{{ route('comics.show', [ 'comic' => $book['id'] ]) }}">
-                        <img src="{{ $book['thumb'] }}" alt="{{ $book['series'] }}">
-                    </a>
+                @foreach($comics as $book)
+                    <div class="series">
+    
+                        {{-- img --}}
+                        <a href="{{ route('comics.show', [ 'comic' => $book['id'] ]) }}">
+                            <img src="{{ $book['thumb'] }}" alt="{{ $book['series'] }}">
+                        </a>
+    
+                        {{-- title --}}
+                        <h5 class="titolo">{{ $book['series'] }}</h5>
+    
+                        {{-- edit --}}
+                        {{-- bottone con rotta che riconduce all'id della tabella dell'elemento selezionato --}}
+                        <a href="{{ route('comics.edit', $book['id'] ) }}" class="btn btn-info">Modifica</a>
+    
+                        {{-- delete --}}
+                        {{-- Inserisco nell'attributo action la rotta destroy, passando la variabile $book['id'] per cancellare l'elemento corrente --}}
+                        <form action="{{ route('comics.destroy', $book['id']) }}" method="POST">
+    
+                            @csrf
+                            @method('DELETE')
 
-                    {{-- title --}}
-                    <h5>{{ $book['series'] }}</h5>
-
-                    {{-- edit --}}
-                    {{-- bottone con rotta che riconduce all'id della tabella dell'elemento selezionato --}}
-                    <a href="{{ route('comics.edit', $book['id'] ) }}" class="btn btn-info">Modifica</a>
-
-                    {{-- delete --}}
-                    {{-- Inserisco nell'attributo action la rotta destroy, passando la variabile $book['id'] per cancellare l'elemento corrente --}}
-                    <form action="{{ route('comics.destroy', $book['id']) }}" method="POST">
-
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Cancella</button>
-                    </form>
-                </div>
-            @endforeach
+                            <button type="submit" class="delete btn btn-danger">Cancella</button>
+                        </form>
+                    </div>
+                @endforeach
+            </div>
 
             <!-- load more -->
-            <div id="load-more">
-                <a href="{{ route('comics.create' )}}" class="text-decoration-none">
-                    <span class="fw-bold fs-1 border border-2 border-white">crea il tuo fumetto!</span>
-                </a>
+            <div class="row text-center">
+
+                <div id="load-more">
+                    <a href="{{ route('comics.create' )}}" class="text-decoration-none">
+                        <span class="fw-bold fs-1 border border-2 border-white">crea il tuo fumetto!</span>
+                    </a>
+                </div>
             </div>
 
         </div>

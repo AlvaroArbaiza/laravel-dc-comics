@@ -19,6 +19,9 @@
 
     {{-- footer importato con @include --}}
     @include('partials.footer')
+
+    <script src="{{ asset('js/main.js') }}"></script>
+    
 </body>
 
 </html>
