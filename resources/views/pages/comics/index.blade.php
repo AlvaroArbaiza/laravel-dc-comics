@@ -27,6 +27,9 @@
 
                     {{-- title --}}
                     <h5>{{ $book['series'] }}</h5>
+
+                    {{-- edit --}}
+                    <a href="{{ route('comics.edit', $book['id'] ) }}" class="btn btn-info">Modifica</a>
                 </div>
             @endforeach
 
