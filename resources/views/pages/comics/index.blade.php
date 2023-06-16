@@ -19,6 +19,12 @@
             <!-- Series -->
             <div class="row my-4">
 
+                @if( Session::has('success') ) 
+                    <div class="alert alert-success">
+                        {!! Session::get('success') !!} 
+                    </div>
+                @endif
+
                 @foreach($comics as $book)
                     <div class="series">
     
