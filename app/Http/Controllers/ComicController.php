@@ -41,6 +41,34 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        // validation
+        $request->validate(
+            [
+                'title' => 'required|unique:comics|max:50',
+                'description' => 'required',
+                'thumb' => 'required',
+                'price' => 'required|max:10',
+                'series' => 'required|max:100',
+                'sale_date' => 'required|max:10',
+                'type' => 'required|max:50',
+                'artists' => 'required',
+                'writers' => 'required'
+            ],
+            [
+                'title.required' => 'Il campo Titolo è richiesto',
+                'title.unique' => 'Il campo Titolo deve eseere univoco e quello che hai scelto è già presente',
+                'title.max' => 'Il campo Titolo non deve superare i 50 caratteri',
+                'description.required' => 'Il campo Descrizione è richiesto',
+                'thumb.required' => 'Il campo Url immagine è richiesto',
+                'price.required' => 'Il campo Prezzo è richiesto',
+                'series.required' => 'Il campo Serie è richiesto',
+                'sale_date.required' => 'Il campo Data Rilascio è richiesto',
+                'type.required' => 'Il campo Tipologia è richiesto',
+                'artists.required' => 'Il campo Artisti è richiesto',
+                'writers.required' => 'Il campo Scrittori è richiesto',
+            ]
+        );
+        
         // associamo a una variabile i dati passati con il form        
         $form_data = $request->all();
 
@@ -85,6 +113,33 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        // validation
+        $request->validate(
+            [
+                'title' => 'required|max:50',
+                'description' => 'required',
+                'thumb' => 'required',
+                'price' => 'required|max:10',
+                'series' => 'required|max:100',
+                'sale_date' => 'required|max:10',
+                'type' => 'required|max:50',
+                'artists' => 'required',
+                'writers' => 'required'
+            ],
+            [
+                'title.required' => 'Il campo Titolo è richiesto',
+                'title.max' => 'Il campo Titolo non deve superare i 50 caratteri',
+                'description.required' => 'Il campo Descrizione è richiesto',
+                'thumb.required' => 'Il campo Url immagine è richiesto',
+                'price.required' => 'Il campo Prezzo è richiesto',
+                'series.required' => 'Il campo Serie è richiesto',
+                'sale_date.required' => 'Il campo Data Rilascio è richiesto',
+                'type.required' => 'Il campo Tipologia è richiesto',
+                'artists.required' => 'Il campo Artisti è richiesto',
+                'writers.required' => 'Il campo Scrittori è richiesto',
+            ]
+        );
+
         // associamo a una variabile i dati passati con il form
         $form_data = $request->all();
 
