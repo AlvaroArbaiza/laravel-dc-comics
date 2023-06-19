@@ -34,7 +34,7 @@
                         </a>
     
                         {{-- title --}}
-                        <h5 class="titolo">{{ $book['series'] }}</h5>
+                        <h5 class="titolo">{{ $book['title'] }}</h5>
     
                         {{-- edit --}}
                         {{-- bottone con rotta che riconduce all'id della tabella dell'elemento selezionato --}}

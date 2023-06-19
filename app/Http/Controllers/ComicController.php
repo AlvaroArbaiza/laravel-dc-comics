@@ -116,7 +116,7 @@ class ComicController extends Controller
         // validation
         $request->validate(
             [
-                'title' => 'required|max:50',
+                'title' => 'required|max:50|unique:comics,title,'.$comic->id,
                 'description' => 'required',
                 'thumb' => 'required',
                 'price' => 'required|max:10',
@@ -128,6 +128,7 @@ class ComicController extends Controller
             ],
             [
                 'title.required' => 'Il campo Titolo è richiesto',
+                'title.unique' => 'Il campo Titolo è univoco',
                 'title.max' => 'Il campo Titolo non deve superare i 50 caratteri',
                 'description.required' => 'Il campo Descrizione è richiesto',
                 'thumb.required' => 'Il campo Url immagine è richiesto',
